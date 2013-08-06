@@ -456,7 +456,7 @@ function wpmp_switcher_is_mobile_browser() {
       $wpmp_switcher_is_mobile_browser = lite_detection();
     }
   }
-  return $wpmp_switcher_is_mobile_browser;
+  return apply_filters('wordpress_mobile_pack_is_mobile_browser', $wpmp_switcher_is_mobile_browser);
 }
 function wpmp_switcher_is_cookie($type='desktop') {
   return (isset($_COOKIE[WPMP_SWITCHER_COOKIE_VAR]) && $_COOKIE[WPMP_SWITCHER_COOKIE_VAR] == $type);
